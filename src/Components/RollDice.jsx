@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-function RollDice() {
-  const [currentDice,setCurrentDice]=useState(1);
+function RollDice({currentDice,setCurrentDice,checkMate}) {
+  
 
   const generateRandomNumber=(min,max)=>{
   console.log (Math.floor(Math.random()*(max-min)+min))
   setCurrentDice( Math.floor(Math.random()*(max-min)+min));
+
+  checkMate();
   }
   return (
 
